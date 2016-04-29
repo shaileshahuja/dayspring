@@ -55,16 +55,7 @@
             <div class="container center-block" >
                 <h1 style="text-align: center">DAYSPRING ADMIN CENTER</h1>
                 <hr>
-                <form action="{% url 'capture:upload' %}" method="post"  enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <label class="custom-file-upload">
-						<input type="file"/>
-						Select File
-				    </label>
-                    <button id="uplBtn" type="submit" class="btn btn-primary center-block">
-                        <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>Upload
-                    </button>
-                </form>
+                <p> Successfully uploaded file! </p>
             </div>
         </div>
     </div>
