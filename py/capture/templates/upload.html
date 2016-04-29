@@ -57,6 +57,7 @@
                 <hr>
                 <form action="{% url 'capture:upload' %}" method="post"  enctype="multipart/form-data">
                     {% csrf_token %}
+                    <input type="file">
                     <button id="uplBtn" type="submit" class="btn btn-primary center-block">
                         <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>Upload
                     </button>
