@@ -150,3 +150,7 @@ class UploadPage(View):
         if form.is_valid():
             parse_file(request.FILES['file'])
             return HttpResponseRedirect('/capture/success')
+
+
+class SuccessPage(TemplateView):
+    template_name = "success.html"
