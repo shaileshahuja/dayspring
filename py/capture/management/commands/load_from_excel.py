@@ -136,4 +136,3 @@ class Command(BaseCommand):
 
                     new_donation.save()
 
-        pass
