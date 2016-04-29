@@ -52,12 +52,12 @@
 
   <!-- Page Content -->
   <div id="page-content-wrapper">
-    <div class="container center-block">
+    <div class="container-fluid center-block">
       <h1 style="text-align: center">DAYSPRING ADMIN CENTER</h1>
       <hr>
       <form action="{% url 'capture:upload' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-
+        <br><br>
         {% for field in form %}
           {{ field.label_tag }}
           {{ field }}
