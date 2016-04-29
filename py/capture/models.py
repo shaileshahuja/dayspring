@@ -32,9 +32,15 @@ class DaySpringUser(User):
         super(DaySpringUser, self).save(force_insert=force_insert, force_update=force_update, using=using,
                                         update_fields=update_fields)
 
+    def __unicode__(self):
+        return self.first_name + ": " + self.email
+
 
 class DaySpringProject(models.Model):
     name = models.CharField(choices=static.PROJECT_NAMES, max_length=200)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Donation(models.Model):
@@ -54,6 +60,9 @@ class Donation(models.Model):
     project = models.ForeignKey(to=DaySpringProject)
     user = models.ForeignKey(to=DaySpringUser)
     individual_indicator = models.BooleanField()
+
+    def __unicode__(self):
+        return str(self.amount) + " by " + self.user.first_name
 
 
 @receiver(post_save, sender=Donation)

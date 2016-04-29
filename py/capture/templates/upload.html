@@ -55,7 +55,8 @@
             <div class="container center-block" >
                 <h1 style="text-align: center">DAYSPRING ADMIN CENTER</h1>
                 <hr>
-                <form action="/capture/upload" method="post">
+                <form action="{% url 'capture:upload' %}" method="post"  enctype="multipart/form-data">
+                    {% csrf_token %}
                     <button id="uplBtn" type="submit" class="btn btn-primary center-block">
                         <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>Upload
                     </button>
