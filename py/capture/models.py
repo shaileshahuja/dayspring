@@ -14,6 +14,7 @@ class DaySpringUser(User):
     birthday = models.DateField()
     id_type = models.CharField(choices=static.ID_TYPES, max_length=10)
     id_no = models.CharField(max_length=10)
+    age = models.PositiveIntegerField()
 
 
 class Project(models.Model):

@@ -4,17 +4,28 @@ SALUTATIONS = (('mr', "Mr"),
                ('dr',"Dr"),
                ('mrs',"Mrs"))
 
-GENDERS = (('m', "Male"),
-           ('f', "Female"))
+GENDERS = (('Male', "Male"),
+           ('Female', "Female"))
 
-ID_TYPES = (('nric',"NRIC"),('fin',"FIN"))
+ID_TYPES = (('NRIC',"NRIC"),('FIN',"FIN"))
 
-PAYMENT_TYPES = (('cash',"Cash"),
-                 ('paypal',"PayPal"),
-                 ('cheque',"Cheque"))
+PAYMENT_TYPES = (('Cash',"Cash"),
+                 ('PayPal',"PayPal"),
+                 ('Cheque',"Cheque"))
 
-DONATION_TYPES = (('oc',"Outright Cash"),
-                  ('credit',"Credit"))
+DONATION_TYPES = (('Outright Cash',"Outright Cash"),
+                  ('Credit',"Credit"))
 
-FUND_NAMES = (('ds_tax',"DS TAX"),
-              ('ds_nlc',"DS NLC"))
+FUND_NAMES = (('DS TAX',"DS TAX"),
+              ('DS NLC',"DS NLC"))
+
+PROJECT_NAMES = (('FB GIT Hackathon',"FB GIT Hackathon"),
+                 ('Message of Hope',"Message of Hope"),
+                 ('Empowerment',"Empowerment"),
+                 ('Ray of Hope',"Ray of Hope"),
+                 ('Donate Now',"Donate Now"),
+                 ('FB GIT Hackathon 2', "FB GIT Hackathon 2"),
+                 ('Message of Hope', "Message of Hope 2"),
+                 ('Empowerment 2', "Empowerment 2"),
+                 ('Ray of Hope 2', "Ray of Hope 2"),
+                 ('Donate Now 2', "Donate Now 2"))
