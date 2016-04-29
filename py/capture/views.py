@@ -49,6 +49,7 @@ def parse_file(file):
             new_user = DaySpringUser()
             # update info
             new_user.address = row['Add 1']
+            split_names = row['Name'].split(" ")
             new_user.first_name = split_names[0]
             if len(split_names) > 1:
                 new_user.last_name = split_names[1]
