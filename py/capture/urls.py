@@ -5,5 +5,6 @@ from capture.views import UploadPage, HomePage
 urlpatterns = patterns(
     '',
     url(r"^home", HomePage.as_view(), name="home"),
-    url(r"^upload", UploadPage.as_view(), name="upload")
+    url(r"^upload", UploadPage.as_view(), name="upload"),
+    url(r"^success", UploadPage.as_view(), name="success")
 )
