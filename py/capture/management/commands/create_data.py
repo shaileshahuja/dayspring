@@ -1,5 +1,6 @@
 from random import choice, randint
 
+from datetime import timedelta
 from django.core.management.base import BaseCommand
 from faker import Factory
 
@@ -11,7 +12,7 @@ class Command(BaseCommand):
     help = 'Creates a record'
 
     def add_arguments(self, parser):
-        parser.add_argument('-limit', type=int, help='Number of records')
+        parser.add_argument('limit', type=int, help='Number of records')
         # parser.add_argument('-status', type=int, help='The final status for an offer made for this loan request')
         # parser.add_argument('-lender', type=str, help='If specified with status, the lender makes an offer for this'
         #                                               'loan request that reaches the given status')
@@ -23,12 +24,13 @@ class Command(BaseCommand):
         # Project
         data_dict = {
             "id_type": choice(static.ID_TYPES)[0],
-            "id_no": randint(800000, 900000),
+            "id_no": randint(80000, 90000),
             "salutation": choice(static.SALUTATIONS)[0],
             "address": faker.address(),
             "gender": choice(static.GENDERS)[0],
             "postal_code": '6' + faker.postalcode(),
-            "birthday": faker.date_time_between(start_date="-9y", end_date="-2y").date(),
+            "birthday": faker.date_time_between(start_date="-9y", end_date="-2y").date() - timedelta(
+                days=randint(5000, 50000)),
             "contact_no": faker.phone_number(),
             "first_name": faker.first_name(),
             "last_name": faker.last_name(),
@@ -57,10 +59,11 @@ class Command(BaseCommand):
             "converted": faker.pybool(),
             "name_of_fund": choice(static.FUND_NAMES)[0],
             "project": p,
-            "user": dpu
+            "user": dpu,
+            "remarks": faker.words(nb=5)
         }
         donation = Donation.objects.create(**donation_dict)
 
     def handle(self, *args, **options):
-        for i in xrange(1000):
+        for i in xrange(options['limit']):
             self.generate_random_data()
