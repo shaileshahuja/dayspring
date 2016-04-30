@@ -10,7 +10,8 @@ class DonationAdmin(admin.ModelAdmin):
 
 class DaySpringUserAdmin(admin.ModelAdmin):
     model = DaySpringUser
-
+    fields = ('first_name', 'last_name', 'email', 'salutation', 'birthday', 'address', 'postal_code', 'contact_no',
+              'gender', 'id_type', 'id_no')
 
 class DaySpringProjectAdmin(admin.ModelAdmin):
     model = DaySpringProject

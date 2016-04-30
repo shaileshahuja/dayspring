@@ -18,13 +18,6 @@ from capture.forms import UploadFileForm
 class HomePage(FormView):
     template_name = "upload.html"
     form_class = UploadFileForm
-    success_url = 'capture/thanks/'
-
-    def form_valid(self, form):
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
-        form.send_email()
-        return super(HomePage, self).form_valid(form)
 
 
 def formatDate(date_str):
