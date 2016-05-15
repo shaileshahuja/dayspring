@@ -18,6 +18,8 @@
   <!-- Custom CSS -->
   <link href="{% static "css/simple-sidebar.css" %}" rel="stylesheet">
 
+    <link href='https://fonts.googleapis.com/css?family=Martel:600' rel='stylesheet' type='text/css'>
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -52,9 +54,14 @@
 
   <!-- Page Content -->
   <div id="page-content-wrapper">
-    <div class="container-fluid center-block">
-      <h1 style="text-align: center">DAYSPRING ADMIN CENTER</h1>
-      <hr>
+    <div class="container-fluid">
+    <div class="header">
+      <h1><img src="{% static "images/dayspring.png" %}"> </h1>
+
+    </div>
+    <div class="panel">
+        <h2>Data Upload</h2>
+
       <form action="{% url 'capture:upload' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <br><br>
@@ -63,10 +70,11 @@
           {{ field }}
         {% endfor %}
         <input type="submit" value="Submit" id="Save"/>
-{#        <button id="uplBtn" type="submit" class="btn btn-primary center-block">#}
-{#          <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>Upload#}
-{#        </button>#}
       </form>
+    </div>
+    <div class="panel">
+        <h2>Quick Links</h2>
+
     </div>
   </div>
 </div>
